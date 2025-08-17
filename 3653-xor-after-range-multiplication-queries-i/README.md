@@ -59,3 +59,5 @@
 	<li><code>1 &lt;= k<sub>i</sub> &lt;= n</code></li>
 	<li><code>1 &lt;= v<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 </ul>
+[Please turn on the English subtitle which explains the 3rd approach]
+[https://youtu.be/9MCsi9t3py4?si=hokppHX0sNa7JrKS](https://youtu.be/9MCsi9t3py4?si=hokppHX0sNa7JrKS)
