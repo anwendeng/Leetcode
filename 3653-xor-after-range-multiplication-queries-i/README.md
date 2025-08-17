@@ -1,4 +1,6 @@
+[Click the youtube video]
 [![LeetCode 解題教學](https://img.youtube.com/vi/9MCsi9t3py4/0.jpg)](https://www.youtube.com/watch?v=9MCsi9t3py4)
+
 <h2><a href="https://leetcode.com/problems/xor-after-range-multiplication-queries-i">3653. XOR After Range Multiplication Queries I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code> and a 2D integer array <code>queries</code> of size <code>q</code>, where <code>queries[i] = [l<sub>i</sub>, r<sub>i</sub>, k<sub>i</sub>, v<sub>i</sub>]</code>.</p>
 
 <p>For each query, you must apply the following operations in order:</p>
@@ -60,5 +62,4 @@
 	<li><code>1 &lt;= k<sub>i</sub> &lt;= n</code></li>
 	<li><code>1 &lt;= v<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 </ul>
-[Please turn on the English subtitle which explains the 3rd approach]
-[https://youtu.be/9MCsi9t3py4?si=hokppHX0sNa7JrKS](https://youtu.be/9MCsi9t3py4?si=hokppHX0sNa7JrKS)
+
