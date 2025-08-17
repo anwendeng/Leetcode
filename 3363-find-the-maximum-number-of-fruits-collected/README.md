@@ -1,3 +1,12 @@
+<h2>我的 LeetCode 解題影片</h2>
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/6o-OsQ7luuQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
 <h2><a href="https://leetcode.com/problems/find-the-maximum-number-of-fruits-collected/">3363. Find the Maximum Number of Fruits Collected</a></h2><h3>Hard</h3><hr><p>There is a game dungeon comprised of&nbsp;<code>n x n</code> rooms arranged in a grid.</p>
 
 <p>You are given a 2D array <code>fruits</code> of size <code>n x n</code>, where <code>fruits[i][j]</code> represents the number of fruits in the room <code>(i, j)</code>. Three children will play in the game dungeon, with <strong>initial</strong> positions at the corner rooms <code>(0, 0)</code>, <code>(0, n - 1)</code>, and <code>(n - 1, 0)</code>.</p>
