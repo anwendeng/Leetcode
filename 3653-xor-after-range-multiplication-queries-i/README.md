@@ -1,5 +1,9 @@
 [Click the youtube video]
+<br/>
 [![LeetCode 解題教學](https://img.youtube.com/vi/9MCsi9t3py4/0.jpg)](https://www.youtube.com/watch?v=9MCsi9t3py4)
+
+<br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9MCsi9t3py4?si=wCWAuECMPcmXXq_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h2><a href="https://leetcode.com/problems/xor-after-range-multiplication-queries-i">3653. XOR After Range Multiplication Queries I</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> of length <code>n</code> and a 2D integer array <code>queries</code> of size <code>q</code>, where <code>queries[i] = [l<sub>i</sub>, r<sub>i</sub>, k<sub>i</sub>, v<sub>i</sub>]</code>.</p>
 
