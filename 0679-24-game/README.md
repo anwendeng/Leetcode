@@ -215,7 +215,7 @@ public:
 };
 ```
 # C++ variant||4ms
-```
+```cpp
 // the rest is unchanged
 rational st[4];
 int top=-1;
