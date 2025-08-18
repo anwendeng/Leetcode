@@ -40,6 +40,12 @@
 </pre>
 
 <p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>cards.length == 4</code></li>
+	<li><code>1 &lt;= cards[i] &lt;= 9</code></li>
+</ul>
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -75,9 +81,10 @@ constexpr int INF=1e6+3;// deal with when denominator=0
 3. define `rational postfix(const string& s)` which computes the value for the given postfix expr `s` where numbers consist all of 1 digit.
 4. Define `bool get24(int x[4])` to judge whether there is a way to obtain 24 for the digits `x[4]` in the fixed positions
 5. in `bool judgePoint24(vector<int>& cards)` uses a quadruple loop to find all possible permutations for `cards` with considering not repeating; in the innerst loop proceed `int arr[4]={a, b, c, d};
-                        if (get24(arr)) return 1;`
+                        if (get24(arr)) return 1;`this is also the bottleneck for the speed; it needs 256 iterations but has at most $4!=24$ different permutations; so this part should be revised.
 6. If the loop is through, it's impossible to get 24 for these `cards`
-7. A variant for `postfix(string& s)` us made in use of C-array as the stack which has elapsed time 4ms.
+7. A variant for `postfix(string& s)` is made in use of C-array as the stack which has elapsed time 4ms.
+8. The quadruple loop  in `bool judgePoint24(vector<int>& cards)` is replaced the backtracking with swaps which has exactly 24 iterations. This version has better performance.
 # Some computation for testcast cards=[4,1,8,7]
 ```cpp
 41+7-8/:=>-1/4
@@ -215,7 +222,7 @@ public:
 };
 ```
 # C++ variant||4ms
-```cpp
+```
 // the rest is unchanged
 rational st[4];
 int top=-1;
@@ -244,9 +251,33 @@ public:
 ....
 
 ```
-<p><strong>Constraints:</strong></p>
+# C++ backtrack with swaps instead of the quadruple loop||3ms
+```cpp
+// version for backtrack with swaps
+    static int pack(auto& arr) {
+        return (arr[0]<< 12) + (arr[1]<< 8) + (arr[2]<< 4) + arr[3];
+    }
+    static bool judgePoint24(vector<int>& cards) {
+        bitset<0xffff> seen=0;
+        for (int i=0; i<4; i++) {
+            swap(cards[0], cards[i]);
+            for (int j=1; j<4; j++) {
+                swap(cards[1], cards[j]);
+                for (int k=2; k<4; k++) {
+                    swap(cards[2], cards[k]);
+                    int x=pack(cards);
+                    if (!seen[x]){
+                        if (get24(cards)) return 1;
+                        seen[x]=1;
+                    }
+                    swap(cards[2], cards[k]); // backtrack
+                }
+                swap(cards[1], cards[j]); // backtrack
+            }
+            swap(cards[0], cards[i]); // backtrack
+        }
+        return 0;
+    }
+};
+```
 
-<ul>
-	<li><code>cards.length == 4</code></li>
-	<li><code>1 &lt;= cards[i] &lt;= 9</code></li>
-</ul>
