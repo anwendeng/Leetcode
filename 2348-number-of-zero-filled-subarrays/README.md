@@ -40,8 +40,10 @@ There is no occurrence of a subarray with a size more than 3 filled with 0. Ther
 	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
+<hr/>
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
+
 Done long ago. 
 
 Let's begin with the very case for nums=[0,0,0,0].
@@ -61,10 +63,12 @@ https://leetcode.com/problems/can-place-flowers/solutions/7097087/nn120ms-by-anw
 
 # Approach
 <!-- Describe your approach to solving the problem. -->
-To reduce the if-branch, 1 is appended to the array nums.
-Use the loop to find out the lengths N's of  maximal subarrays filling with 0. Then use the formula N*(N+1)/2 to sum up.
+1. To reduce the checking after the loop, 1 is appended to the array nums.
+2. Use the loop to find out the lengths N's of  maximal subarrays filling with 0. Then use the formula `N*(N+1)/2` to sum up.
 
-Add a new C++ by using 2-pointer method also the formula
+3. Add a new C++ by using 2-pointer method also the formula
+4. add a 1 liner C++
+5. add a Python 1-line code
 # Complexity
 - Time complexity:
 <!-- Add your time complexity here, e.g. $$O(n)$$ -->
@@ -73,6 +77,29 @@ $$O(n)$$
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 $O(1)$
 # Code
+```cpp []
+// this version removes prev thanks to @nodeforce
+class Solution {
+public:
+    long long zeroFilledSubarray(vector<int>& nums) {
+        nums.push_back(1);
+        const int s=nums.size();
+        int a_len=0;
+        long long sum=0;
+        for (int i=0; i<s; i++){
+            if (nums[i]==0){
+                 a_len++;
+            }     
+            else if (a_len)
+            {
+                sum+=(long long)a_len*(a_len+1)/2;
+                a_len=0;
+            }
+        }
+        return sum;
+    }
+};
+```
 ```cpp []
 class Solution {
 public:
@@ -117,4 +144,29 @@ public:
         return sum;
     }
 };
+```
+# 1-liner ||C++ & Python
+```cpp []
+class Solution { 
+public: 
+    long long zeroFilledSubarray(vector<int>& nums) { 
+        return accumulate(nums.begin(), nums.end() , 0LL, 
+[&, len=0](long long sum, int x) mutable {
+            return sum+=(len=(x!=0)?0:len+1);});}};
+
+```
+```Python []
+class Solution:
+    def zeroFilledSubarray(self, nums: List[int]) -> int:
+        return (Len:=0) or sum( Len:=Len+1 if x==0 else 0 for x in nums )
+          
+```
+# 1-liner without branch
+```
+class Solution { 
+public: 
+    static long long zeroFilledSubarray(vector<int>& nums) { 
+        return accumulate(nums.begin(), nums.end() , 0LL, 
+[&, len=0](long long sum, int x) mutable {
+            return sum+=(len=(len+1)*(x==0));});}};
 ```
