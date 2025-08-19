@@ -54,7 +54,8 @@ There is 1 occurrence of [0,0,0,0 ] as a subarray.
 In a similar way, when nums is filled with N times 0, it is not hard to conclude that there are exactly N*(N+1)/2 subarrays filled with 0.
 
 [LC. 605. Please turn on English subtitles if necessary]
-[https://www.youtube.com/watch?v=0TLqEanwcV0](https://www.youtube.com/watch?v=0TLqEanwcV0)
+[![影片縮圖](https://img.youtube.com/vi/0TLqEanwcV0/0.jpg)](https://www.youtube.com/watch?v=0TLqEanwcV0)
+(https://www.youtube.com/watch?v=0TLqEanwcV0)
 I also used the similar idea to solve the problem "can-place-flowers"!
 https://leetcode.com/problems/can-place-flowers/solutions/7097087/nn120ms-by-anwendeng-jglu/)
 
