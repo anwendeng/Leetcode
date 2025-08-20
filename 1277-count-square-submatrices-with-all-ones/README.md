@@ -48,6 +48,8 @@ Total number of squares = 6 + 1 = <b>7</b>.
 Reuse matrix as state matrix. Let `matrix[i][j]` hold the number of all 1s squares with  bottom-right corner (i, j)-term. It's to note that the number of such squares is the the width of the biggest square  with this corner.
 
 [Please turn on the English subtitles if necessary]
+<br/>
+[![影片縮圖](https://img.youtube.com/vi/HhckuZwDVe8/0.jpg)](https://www.youtube.com/watch?v=HhckuZwDVe8)
 [https://youtu.be/HhckuZwDVe8?si=z1eDE49UUi2AMqou](https://youtu.be/HhckuZwDVe8?si=z1eDE49UUi2AMqou)
 Recursive solution also included. The recurrence can be derived from the following figure
 ![1277.png](https://assets.leetcode.com/users/images/cc11dfc3-d08a-4ab5-bf08-df572f1dc5bd_1755657914.5041687.png)
