@@ -52,7 +52,7 @@ Reuse matrix as state matrix. Let `matrix[i][j]` hold the number of all 1s squar
 [![影片縮圖](https://img.youtube.com/vi/HhckuZwDVe8/0.jpg)](https://www.youtube.com/watch?v=HhckuZwDVe8)
 [https://youtu.be/HhckuZwDVe8?si=z1eDE49UUi2AMqou](https://youtu.be/HhckuZwDVe8?si=z1eDE49UUi2AMqou)
 Recursive solution also included. The recurrence can be derived from the following figure
-![1277.png](https://assets.leetcode.com/users/images/cc11dfc3-d08a-4ab5-bf08-df572f1dc5bd_1755657914.5041687.png)
+![1277.png](https://github.com/anwendeng/Leetcode/blob/main/1277-count-square-submatrices-with-all-ones/1277.png)
 
 # Approach
 <!-- Describe your approach to solving the problem. -->
