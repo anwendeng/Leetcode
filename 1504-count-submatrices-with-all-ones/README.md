@@ -44,7 +44,7 @@ Total number of rectangles = 8 + 5 + 2 + 4 + 2 + 2 + 1 = 24.
 1. reuse mat to compute the heights 
 2. Use mono stack to find the widths 
 3. Consider the area of the rectangle with right bottom  corner `(i, j)` which is the number of all its subrectangles with this corner. more is shown in the figure
-![mnostack.png](https://assets.leetcode.com/users/images/dadb659f-5a46-4ba1-910f-b0da584a4fac_1755757898.1883192.png)
+![mnostack.png](https://github.com/anwendeng/Leetcode/blob/main/1504-count-submatrices-with-all-ones/mnostack.png)
 
 Let `h[j]` denote height for `mat[i][j]`; Use the mono stack for for heights, it will pop out all index `top` until `h[j]>(or >=) h[left]` ( due to implementation) where `left=st[top]`. The new added rectangle has width=`j-left` & height `h[j]`; all rectangles with right-bottom corner at `(i, left)` can be 1-1 extended to the rectangles with right-bottom corner at `(i, j)` as shown with dash in the figure
 # Approach
