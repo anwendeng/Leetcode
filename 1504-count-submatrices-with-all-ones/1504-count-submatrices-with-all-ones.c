@@ -2,11 +2,11 @@
 int st[150], top=-1;//mono stack
 int numSubmat(int** mat, int r, int* matColSize) {
     int c=*matColSize;
+    int *cnt=alloca(c*sizeof(int));
     int ans=0;
     for (int i=0; i<r; i++){
         int* h=mat[i];//height
         top=-1;// reset mono stack
-        int *cnt=alloca(c*sizeof(int));
         memset(cnt, 0, c*sizeof(int));
         for(int j=0; j<c; j++){
             if (h[j]==0){
