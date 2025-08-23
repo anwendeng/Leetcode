@@ -58,6 +58,7 @@ Use bitmask & bitwise operations to decrease the time complexity from quatic to 
 # Approach
 <!-- Describe your approach to solving the problem. -->
 [Please turn on the Eglish subtitles if necessary]
+[![影片縮圖](https://img.youtube.com/vi/Xr_CbjD8E9M/0.jpg)](https://www.youtube.com/watch?v=Xr_CbjD8E9M)
 [https://youtu.be/Xr_CbjD8E9M?si=tbLeopU88sgOEhaj](https://youtu.be/Xr_CbjD8E9M?si=tbLeopU88sgOEhaj)
 1. Let 1D arrays `unsigned A[30], T[30]` be the bitwise packed forms for `grid` & its transpose
 2. Define `void build_A_T(vector<vector<int>>& grid, int n, int m)` to build `A` & `T`. Since `grid` has only values either 0 or 1 & `1 <= grid.length, grid[i].length <= 30`, it can be used bitmask method to pack the whole row, col into 1 unsigned int. This part has TC $O(nm)$
