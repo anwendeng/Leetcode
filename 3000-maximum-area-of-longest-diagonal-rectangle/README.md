@@ -38,6 +38,8 @@ Done long ago.
 Find the Max squared diagonal (not taking sqrt for $w^2+h^2$), update the max Area
 
 [Please turn on the English subtitles if necessary]
+
+[![影片縮圖](https://img.youtube.com/vi/keBcbyh4Z7A/0.jpg)](https://www.youtube.com/watch?v=keBcbyh4Z7A)
 [https://youtu.be/keBcbyh4Z7A?si=WSv9Wypw-S9Iar3Q](https://youtu.be/keBcbyh4Z7A?si=WSv9Wypw-S9Iar3Q)
 2nd approach defines a custom `cmp` to give the ordering based on the pair $(w^2+h^2, wh)$, then uses `max_element` which is also fast; Python code is made in the similar way in 2 lines.
 # Approach
