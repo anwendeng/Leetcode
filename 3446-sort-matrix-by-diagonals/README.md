@@ -66,3 +66,81 @@
 	<li><code>1 &lt;= n &lt;= 10</code></li>
 	<li><code>-10<sup>5</sup> &lt;= grid[i][j] &lt;= 10<sup>5</sup></code></li>
 </ul>
+<br/>
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+A very easy question on matrix with tiny testcases, even much smaller than the similar question `1329. Sort the Matrix Diagonally`
+Reuse `grid`; C++ & Python are made.
+[Please turn on the English subtiltles, the Python code is made during filming]
+[https://youtu.be/09QTQ-kHSSY?si=wcD1Rpja3rowCkJN](https://youtu.be/09QTQ-kHSSY?si=wcD1Rpja3rowCkJN)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. Declare `diag[10]` as the global variable as the temp array
+2. let `n=|grid|`
+3. Compute the upper triangle part `i<=j` as follows
+```cpp
+// skip grid[0][n-1]
+for(int d=n-2; d>0; d--){// diagonal with j=i+d
+    for(int i=0; i<n-d; i++)
+        diag[i]=grid[i][i+d];// put grid[i][i+d] into diag
+    sort(diag, diag+(n-d));// sort diag w.r.t. ascending order
+    for(int i=0; i<n-d; i++)
+        grid[i][i+d]=diag[i]; // obtain sorted grid[i][i+d] from diag
+}
+```
+4. The lower triangle part `i>j` is proceeding in the similar way; but sort `diag` w.r.t. the descending order
+5. return `grid`
+6. Since `diag` has at most 10 elements, it's no need to replace `std::sort` by other sorting method(but for the size<=4, bubble sort is the most efficient one)
+7. Python code is done in the simila way.
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(n^2\log n)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(10)$
+# Code||C++ 0ms|Py3 10ms
+```cpp []
+int diag[10];
+class Solution {
+public:
+    static vector<vector<int>> sortMatrix(vector<vector<int>>& grid) {
+        const int n=grid.size();
+        for(int d=n-2; d>0; d--){
+            for(int i=0; i<n-d; i++)
+                diag[i]=grid[i][i+d];
+            sort(diag, diag+(n-d));
+            for(int i=0; i<n-d; i++)
+                grid[i][i+d]=diag[i];
+        }
+        for (int d=0; d<n-1; d++){
+            for(int j=0; j<n-d; j++)
+                diag[j]=grid[j+d][j];
+            sort(diag, diag+(n-d), greater<>());
+            for(int j=0; j<n-d; j++)
+                grid[j+d][j]=diag[j];
+        }
+        return grid;
+    }
+};
+```
+```Python []
+class Solution:
+    def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n=len(grid)
+        # upper right triangle j=i+d
+        for d in range(n-2, -1, -1):
+            diag=sorted(grid[i][i+d] for i in range(n-d))
+            for i, x in enumerate(diag):
+                grid[i][i+d]=x
+        # lower left triangle i=j+d
+        for d in range(n-1):
+            diag=sorted((grid[j+d][j] for j in range(n-d)), reverse=True)
+            for j, x in enumerate(diag):
+                grid[j+d][j]=x
+        return grid
+        
+        
+        
+```
