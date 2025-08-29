@@ -3,8 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
+  <!-- 文字與版面 -->
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    iframe {
+      margin-bottom: 20px;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    a img {
+      margin-top: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #1a0dab;
+    }
+    .video-section {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
   {{ content }}
 </body>
 </html>
+
