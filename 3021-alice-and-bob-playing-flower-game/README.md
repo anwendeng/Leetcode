@@ -37,6 +37,42 @@
 <strong>Explanation:</strong> No pairs satisfy the conditions described in the statement.
 </pre>
 
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+The answer is `(n*m)//2` Why? Consider the set
+$U=\{ (x, y)|x\in [1, n]\cap Z, y\in[1, m]\cap Z\}$
+The set Alice can win is in fact $A=\{ (x,y)\in U|x+y\equiv 1\pmod{2}\}$, the answer is the cardinality of $A.$ Think of the chessboard.
+![808.png](https://assets.leetcode.com/users/images/565d0c42-7f6c-438c-a94a-79d030e756bc_1756427657.942192.png)
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+ `(n*m)//2`
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+# Code|0ms
+```C []
+long long flowerGame(int n, int m) {
+    return (long long)n*m/2;
+}
+```
+```cpp []
+class Solution {
+public:
+    long long flowerGame(int n, int m) {
+        return (long long)m*n/2;
+    }
+};
+```
+```Python []
+class Solution:
+    def flowerGame(self, n: int, m: int) -> int:
+        return n*m//2
+```
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
