@@ -5,15 +5,33 @@ layout: default
 
 # 歡迎來到我的 LeetCode 筆記網站
 
-## LeetCode 解題教學影片播放清單
-<div class="video-section">
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/videoseries?list=PLYRlUBnWnd5IdDHk2BjqXwesydU17z_xk"
-    title="YouTube playlist player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
+## LeetCode 教學影片播放清單
+<div class="video-grid">
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLYRlUBnWnd5IdDHk2BjqXwesydU17z_xk"
+        title="YouTube playlist player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
 </iframe>
+</div>
+</div>
+
+## LeetCode 範例影片
+<div class="video-grid">
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/0TLqEanwcV0?si=qcvVXv3YtIfEj1SV"
+        title="範例影片"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+</div>
+<!-- 可以再加多個影片 -->
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/你的第二影片ID"
+        title="範例影片2"
+        allowfullscreen>
+</iframe>
+</div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -21,20 +39,10 @@ layout: default
     <img src="https://img.shields.io/badge/YouTube-訂閱紅色?style=for-the-badge&logo=youtube" alt="訂閱我的 YouTube">
 </a>
 
-## LeetCode 筆記範例
-<div class="video-section">
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/0TLqEanwcV0?si=qcvVXv3YtIfEj1SV"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-</iframe>
+## LeetCode 題目連結
+<div class="link-list">
+[3021. Alice and Bob Playing Flower Game](https://github.com/anwendeng/Leetcode/tree/main/3021-alice-and-bob-playing-flower-game)  
+[3446. Sort Matrix by Diagonals](https://github.com/anwendeng/Leetcode/tree/main/3446-sort-matrix-by-diagonals)
 </div>
 
-### 範例題目連結
-- [3021. Alice and Bob Playing Flower Game](https://github.com/anwendeng/Leetcode/tree/main/3021-alice-and-bob-playing-flower-game)
-  
-- [3446. Sort Matrix by Diagonals](https://github.com/anwendeng/Leetcode/tree/main/3446-sort-matrix-by-diagonals)
 
