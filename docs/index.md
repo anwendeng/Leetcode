@@ -39,7 +39,7 @@ layout: default
 ## LeetCode 題目連結
 
 
-- [3446. Sort Matrix by Diagonals]([https://github.com/anwendeng/Leetcode/tree/main/3446-sort-matrix-by-diagonals](https://anwendeng.blogspot.com/2025/08/py3-cleetcode-3446-sort-matrix-by.html))
+- [3446. Sort Matrix by Diagonals](https://anwendeng.blogspot.com/2025/08/py3-cleetcode-3446-sort-matrix-by.html)
 - [C++ DP速解難題leetcode 3363 Find the Maximum Number of Fruits Collected/Py3 code inclusive](https://anwendeng.blogspot.com/2025/08/c-dpleetcode-3363-find-maximum-number.html)
 
 
