@@ -37,9 +37,10 @@ layout: default
 </a>
 
 ## LeetCode 題目連結
-<div class="link-list">
-[3021. Alice and Bob Playing Flower Game](https://github.com/anwendeng/Leetcode/tree/main/3021-alice-and-bob-playing-flower-game)  
-[3446. Sort Matrix by Diagonals](https://github.com/anwendeng/Leetcode/tree/main/3446-sort-matrix-by-diagonals)
-</div>
+
+- [3021. Alice and Bob Playing Flower Game](https://github.com/anwendeng/Leetcode/tree/main/3021-alice-and-bob-playing-flower-game)  
+
+- [3446. Sort Matrix by Diagonals](https://github.com/anwendeng/Leetcode/tree/main/3446-sort-matrix-by-diagonals)
+
 
 
