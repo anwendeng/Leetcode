@@ -1,9 +1,9 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         # Use bitmask
-        Col = [0 for _ in range(9)]
-        Row = [0 for _ in range(9)]
-        Block = [0 for _ in range(9)]
+        Col = [0]*9
+        Row = [0]*9
+        Block = [0]*9
 
         for i in range(9):
             for j in range(9):
