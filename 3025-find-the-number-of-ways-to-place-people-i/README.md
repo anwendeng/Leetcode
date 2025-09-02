@@ -69,3 +69,111 @@
 	<li><code>0 &lt;= points[i][0], points[i][1] &lt;= 50</code></li>
 	<li>All <code>points[i]</code> are distinct.</li>
 </ul>
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Same solution as solving [3027. Find the Number of Ways to Place People II](https://leetcode.com/problems/find-the-number-of-ways-to-place-people-ii/description/) which can pass the hard one, it passes this medium one with the elapsed time 0ms
+[Solving LC 3027. Please turn on the English subtitles if necessary]
+[https://youtu.be/hQcQJAb2s-k?si=_sl9qmrYzrACZ12C](https://youtu.be/hQcQJAb2s-k?si=_sl9qmrYzrACZ12C)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. Define the `bool cmp(vector<int>& p, vector<int>& q)` ordered by `(x, >)` , if p[0]==q[0], ordered by `(y, <`)
+2. In `int numberOfPairs(vector<vector<int>>& P)` sort `P` according to `cmp`
+3. let `n=|P|` `ans=0`
+4. Proceed the double loop
+```cpp
+for(int i=0; i<n-1; i++){
+    int y=INT_MAX;
+    for(int j = i+1; j<n; j++){
+        //P[j] has y-coordinate in [P[j][1], y)
+        if (P[j][1]>=P[i][1] && y>P[j][1]){
+            ans++;
+            y=P[j][1];
+        }
+    }
+}
+```
+5. Add a Python code 
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(n^2)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+# Code|C++ 0ms
+```cpp []
+// this version is slight modified for LC 3027
+class Solution {
+public:
+    static bool cmp(const vector<int>& p, const vector<int>& q){
+        return (p[0]==q[0])?p[1]<q[1]:p[0]>q[0];// order by (x, >)
+    }
+    static int numberOfPairs(vector<vector<int>>& P) {
+        sort(P.begin(), P.end(), cmp);
+        int n = P.size(), ans = 0;
+        for(int i=0; i<n-1; i++){
+            int y=INT_MAX, yi=P[i][1];
+            for(int j = i+1; j<n; j++){
+                const int yj=P[j][1];
+                if (yj>=yi && y>yj){//P[j] cannot be in between
+                    ans++;
+                    y=yj;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+auto init = []()
+{ 
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 'c';
+}();
+```
+```cpp []
+class Solution {
+public:
+    static bool cmp(vector<int>& p, vector<int>& q){
+        return (p[0]==q[0])?p[1]<q[1]:p[0]>q[0];// order by (x, >)
+    }
+
+    int numberOfPairs(vector<vector<int>>& P) {
+        sort(P.begin(), P.end(), cmp);
+        int n = P.size(), ans = 0;
+        for(int i=0; i<n-1; i++){
+            int y=INT_MAX;
+            for(int j = i+1; j<n; j++){
+                if (P[j][1]>=P[i][1] && y>P[j][1]){
+                    ans++;
+                    y=P[j][1];
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+auto init = []()
+{ 
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 'c';
+}();
+```
+```Python []
+class Solution:
+    def numberOfPairs(self, P: List[List[int]]) -> int:
+        P.sort(key=lambda p: (-p[0], p[1]))
+        n, ans=len(P), 0
+        for i in range(n-1):
+            y=1<<31
+            for j in range(i+1, n):
+                if y>P[j][1]>=P[i][1]:
+                    ans+=1
+                    y=P[j][1]
+        return ans
+```
