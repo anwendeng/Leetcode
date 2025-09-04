@@ -76,3 +76,106 @@
 <ul>
 	<li><code>1 &lt;= x, y, z &lt;= 100</code></li>
 </ul>
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Problem is easy. 
+Solve it in different ways but also in 1-line.
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. Use ternary to write 1-line is fairly easy.
+2. Python has no tenary like in C/C++ it needs to rewrite
+3. No branch is the best way. Many variants are easy to build.
+4. If not using the builtin `abs`, it needs Math (one solution is done by @Jordinario ref: https://leetcode.com/problems/find-closest-person/solutions/7153048/make-it-faster-without-using-abs-by-3d6f-q913/)
+5. Derive the Math formula in other way: 
+$$
+|x-z|\geq |y-z| \iff (x-z)^2\geq (y-z)^2\\
+$$ One has
+$$
+x^2-2xz+z^2\geq y^2-2zy+z^2\\
+\implies x^2-y^2\geq 2z(x-y)
+$$
+Base on this inequality, one obtains a solution.
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+# Code 1-line|0ms
+```python3 []
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        return 0 if abs(x-z)==abs(y-z) else 2-(abs(x-z)<abs(y-z))
+        
+```
+```cpp []
+class Solution {
+public:
+    int findClosest(int x, int y, int z) {
+        return abs(x-z)==abs(y-z)?0:2-(abs(x-z)<abs(y-z));
+    }
+};
+```
+# 1-liner with tenary|0ms
+```C []
+int findClosest(int x, int y, int z) {
+    return abs(x-z)==abs(y-z)?0:abs(x-z)<abs(y-z)?1:2;
+}
+```
+```cpp []
+class Solution {
+public:
+    int findClosest(int x, int y, int z) {
+        return abs(x-z)==abs(y-z)?0:abs(x-z)<abs(y-z)?1:2;
+    }
+};
+```
+# 3rd approach|0ms
+```Python []
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        return (abs(x-z)!=abs(y-z))*(1+(abs(x-z)>abs(y-z)))
+        
+```
+```cpp []
+class Solution {
+public:
+    int findClosest(int x, int y, int z) {
+        return (abs(x-z)!=abs(y-z))*(1+(abs(x-z)>abs(y-z)));
+    }
+};
+```
+# Variant 1 for 3rd approach
+```
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        return -(abs(x-z)!=abs(y-z)) & (1+(abs(x-z)>abs(y-z)))
+        
+```
+# Variant 2 for 3rd approach
+```
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        return (abs(x-z)!=abs(y-z))<<((abs(x-z)>abs(y-z)))
+        
+```
+# Math Solution|0ms
+```cpp []
+class Solution {
+public:
+    int findClosest(int x, int y, int z) {
+        int d=x*x-y*y-2*z*(x-y);
+        return (d==0)?0:1<<(d>0);
+    }
+};
+```
+```Rust []
+impl Solution {
+    pub fn find_closest(x: i32, y: i32, z: i32) -> i32 {
+        let d:i32=x*x-y*y-2*z*(x-y);
+        (d!=0) as i32*(1+(d>0) as i32)
+    }
+}
+```
