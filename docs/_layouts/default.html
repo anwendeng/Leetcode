@@ -30,11 +30,15 @@
             margin-bottom: 30px;
         }
         .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        border-radius: 12px; /* 圓角 */
+        overflow: hidden;    /* 確保 iframe 不會超出圓角 */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* 陰影 */
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
