@@ -46,10 +46,10 @@ If `num2`=0, it's very easy to finish in O(1) time, & just return `bitcount(num2
 2. Initialize `x=num1` as `long long`; for setting `int`, it will overflow for some testcases
 3. To obtain 0 by taking min operations k times $\iff$ it satisfies the following 2 conditions:
     - the remaining `x>=k`; if `x<k` there are too few 1s
-    - the  bits in `x` is `<=k`
-4. According to this fact to iterate at most 60 times 
+    - the  bits in `x` is , say `bz<=k`; there exists always a k-sum from $2^{i_j}$'s such that $x=\sum_{j=0}^{k-1}2^{i_j}$ for $i_0\leq\cdots\leq i_{k-1} $ in $[0, 60]$
+4. According to this fact to iterate at most 60 times(due to the hint by LC, the real bound is to estimate at the end, or just leave it empty) 
 ```cpp
-for(int k=1; k<61; k++){
+for(int k=1; k<61; k++){// k<61 can be removed
     x-=num2;// in fact x=num1-k*num1
     if (x<k) return -1;// too few 1s
     if (x>=0 && k>=popcount((unsigned long long)(x))) //x>=0 is checked, for the case num2<0
@@ -186,4 +186,13 @@ impl Solution {
 }
 ```
 # Notes on num2<0 & k is finite
-It's to mention that $x=num1-k(num2)$ grows linear, & $bitcount(x)$ has logarithmic growth, but with an error term $O(bitcount(-num2))$. These two will meet somewhere, say $k_0$ which is for sure $k_0<\infty$. The sharp upperbound for $k_0$ needs some more math consideration which is far beyond the scope.
+Suppose $k<bitcount(x)$; otherwise it's determined.
+It's to mention that $x=num1-k(num2)$ grows linear in $k$, & $bitcount(x)$ has logarithmic growth in $k$, in fact $bitcount(x)\leq [\log_2(x)]+1$. i.e.
+$$ 
+bitcount(x)=bitcount(num1+k(-num2))\\
+=O(\log_2(num1+k(-num2)))+O(1)\\
+=O(\log_2(k(-num2)))+O(1)\\
+=O(\log_2(k))+O(\log_2(-num2))+O(1)
+$$
+These two will meet somewhere, say $k_0$ which is for sure $k_0<\infty$. The sharp upperbound for $k_0$ needs some more math consideration. The following gives a hint to estimate the upper bound for k in this question.
+![functions_plot.png](https://assets.leetcode.com/users/images/76e68c8b-ef04-4677-802d-3516d603a31d_1757057045.5234413.png)
