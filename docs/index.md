@@ -39,6 +39,7 @@ layout: default
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hQcQJAb2s-k?si=P444E3Xb269cTNj6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
+<div class="video-grid">
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TGWzwzBrJFM?si=0hNq_yY-ilcrO3X7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
