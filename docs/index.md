@@ -38,6 +38,10 @@ layout: default
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hQcQJAb2s-k?si=P444E3Xb269cTNj6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TGWzwzBrJFM?si=0hNq_yY-ilcrO3X7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
 
 ## 訂閱我的 YouTube 頻道
 <a href="https://www.youtube.com/@anwendeng" target="_blank">
@@ -50,6 +54,7 @@ layout: default
 - [3446. Sort Matrix by Diagonals](https://anwendeng.blogspot.com/2025/08/py3-cleetcode-3446-sort-matrix-by.html)
 - [C++ DP速解難題leetcode 3363 Find the Maximum Number of Fruits Collected/Py3 code inclusive](https://anwendeng.blogspot.com/2025/08/c-dpleetcode-3363-find-maximum-number.html)
 - [Py3 C++排序loop解Leetcode 3025 3027 Find the Number of Ways to Place People](https://anwendeng.blogspot.com/2025/09/py3-cloopleetcode-3025-3027-find-number.html)
+- [C++ C Py3 Rust數bits解Leetcode 2749 Minimum Operations to Make the Intege...](https://anwendeng.blogspot.com/2025/09/c-c-py3-rustbitsleetcode-2749-minimum.html)
 
 
 
