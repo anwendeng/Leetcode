@@ -71,3 +71,136 @@
 	<li><code>queries[i] == [l, r]</code></li>
 	<li><code>1 &lt;= l &lt; r &lt;= 10<sup>9</sup></code></li>
 </ul>
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Use Math recurrence to solve.
+It's good to know that $\lfloor \log_4(x)\rfloor=$`(31-countl_zero(x))/2`
+Count firstly the summation  of exponent+1 of base 4 for each x in `[1...4^i]` where i=0,...,17. i.e.
+$$
+expSum4[i]=expSum(4^i) \quad \text{ where}\\
+expSum(x)=\sum_{i=1}^x(\lfloor \log_4(x)\rfloor+1)
+$$
+The other is easy to find its corresponding summation  of exponent+1 of base 4, that is
+[Please turn on the English subtiles if necessary]
+[https://youtu.be/O4k1UL7G9RY?si=km5r7pMD5tSuv1Qw](https://youtu.be/O4k1UL7G9RY?si=km5r7pMD5tSuv1Qw)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. Declare the array `expSum4[18]={1}`
+2. Define the function `long long expSum(unsigned x)` to compute the corresponding summation  of exponent+1 of base 4; this function uses the following equation to compute:
+$$
+expSum(x)=expSum4[\lfloor \log_4(x)\rfloor]+r(\lfloor \log_4(x)\rfloor+1)
+$$ 
+where $r=x-4^{\lfloor \log_4(x)\rfloor}$
+3. In the function `long long minOperations(vector<vector<int>>& queries)` compute `expSum4[i]`  the summation  of exponent+1 of base 4 for each x in `[1...4^i]` where i=0,...,17 in a loop; use the followingformula to compute:
+$$
+expSum4[i]=expSum4[i-1]+3\times i \times (4^{i-1})+1
+$$
+4. let `op=0`
+5. Use a loop to proceed `op+=(expSum(r)-expSum(l)+1)/2;` for `l+1, r in queries`
+6. `op` is the answer.
+7. C code is made in the same way which beats 100%.
+8. Py3 code is made which beats 100%
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$$O(n)$$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$$O(18)$$
+# Code||C++ 0ms beats 100%|Py3 155ms 100%|C beats 100%
+```cpp []
+// this version computes expSum4[] only once by suggestion of @Sergei
+long long expSum4[18]={0};
+class Solution {
+public:
+    static long long expSum(unsigned x){
+        if (x==0) return 0;
+        int log4=(31-countl_zero(x))/2;
+        int r=x-(1<<(2*log4));
+        return expSum4[log4]+r*(log4+1LL);
+    }
+    static void precompute(){
+        if (expSum4[0]==1) return;
+        expSum4[0]=1;
+        for(int i=1; i<18; i++){
+            expSum4[i]=expSum4[i-1]+3LL*i*(1LL<<(2*(i-1)))+1;
+        //    cout<<i<<"->"<<expSum4[i]<<", ";
+        }
+    }
+    static long long minOperations(vector<vector<int>>& queries) {
+        precompute();
+        long long op=0;
+        for(auto& q: queries){
+            int l=q[0]-1, r=q[1];
+            op+=(expSum(r)-expSum(l)+1)/2;// ceiling of (expSum(r)-expSum(l))/2
+        }
+        return op;
+    }
+};
+```
+```cpp []
+class Solution {
+public:
+    long long expSum4[18]={1};
+    long long expSum(unsigned x){
+        if (x==0) return 0;
+        int log4=(31-countl_zero(x))/2;
+        int r=x-(1<<(2*log4));
+        return expSum4[log4]+r*(log4+1LL);
+    }
+    long long minOperations(vector<vector<int>>& queries) {
+        for(int i=1; i<18; i++){
+            expSum4[i]=expSum4[i-1]+3LL*i*(1LL<<(2*(i-1)))+1;
+        //    cout<<i<<"->"<<expSum4[i]<<", ";
+        }
+        long long op=0;
+        for(auto& q: queries){
+            int l=q[0]-1, r=q[1];
+            op+=(expSum(r)-expSum(l)+1)/2;// ceiling of (expSum(r)-expSum(l))/2
+        }
+        return op;
+    }
+};
+```
+```Python []
+class Solution:
+    def minOperations(self, queries: List[List[int]]) -> int:
+        expSum4=[1]+[0]*17
+        def expSum(x):
+            if x==0: return 0
+            log4=(x.bit_length()-1)>>1
+            r=x-(1<<(log4<<1))
+            return expSum4[log4]+r*(log4+1)
+        for i in range(1,18):
+            expSum4[i]=expSum4[i-1]+3*i*(1<<(2*(i-1)))+1
+        op=0
+        for l1, r in queries:
+            op+=(expSum(r)-expSum(l1-1)+1)>>1
+
+        return op
+```
+```C []
+#pragma GCC optimize("O3, unroll-loops")
+static long long expSum4[18]={1};
+static long long expSum(unsigned x){
+    if (x==0) return 0;
+    int log4=(31-__builtin_clz(x))/2;
+    int r=x-(1<<(2*log4));
+    return expSum4[log4]+r*(log4+1LL);
+}
+
+static long long minOperations(int** queries, int qz, int* queriesColSize) {
+    for(int i=1; i<18; i++){
+        expSum4[i]=expSum4[i-1]+3LL*i*(1LL<<(2*(i-1)))+1;
+    }
+    long long op=0;
+    for(int i=0; i<qz; i++){
+        const int* q=queries[i];
+        int l=q[0]-1, r=q[1];
+        op+=(expSum(r)-expSum(l)+1)/2;// ceiling of (expSum(r)-expSum(l))/2
+    }
+    return op;
+    
+}
+```
