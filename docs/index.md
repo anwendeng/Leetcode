@@ -68,6 +68,7 @@ layout: default
 - [C++ DP速解難題leetcode 3363 Find the Maximum Number of Fruits Collected/Py3 code inclusive](https://anwendeng.blogspot.com/2025/08/c-dpleetcode-3363-find-maximum-number.html)
 - [Py3 C++排序loop解Leetcode 3025 3027 Find the Number of Ways to Place People](https://anwendeng.blogspot.com/2025/09/py3-cloopleetcode-3025-3027-find-number.html)
 - [C++ C Py3 Rust數bits解Leetcode 2749 Minimum Operations to Make the Intege...](https://anwendeng.blogspot.com/2025/09/c-c-py3-rustbitsleetcode-2749-minimum.html)
+- [C++C py3 log4 prefix sum, bits解Leetcode難題3495 Minimum Operations to Mak...](https://anwendeng.blogspot.com/2025/09/cc-py3-log4-prefix-sum-bitsleetcode3495.html)
 
 
 
