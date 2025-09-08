@@ -54,6 +54,9 @@ layout: default
   <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/O4k1UL7G9RY?si=WTVVPjqOeTyQ9nuZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+    <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yb7SsUXX2_U?si=IC-Pkk1QP4KJ5Jy5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -69,6 +72,7 @@ layout: default
 - [Py3 C++排序loop解Leetcode 3025 3027 Find the Number of Ways to Place People](https://anwendeng.blogspot.com/2025/09/py3-cloopleetcode-3025-3027-find-number.html)
 - [C++ C Py3 Rust數bits解Leetcode 2749 Minimum Operations to Make the Intege...](https://anwendeng.blogspot.com/2025/09/c-c-py3-rustbitsleetcode-2749-minimum.html)
 - [C++C py3 log4 prefix sum, bits解Leetcode難題3495 Minimum Operations to Mak...](https://anwendeng.blogspot.com/2025/09/cc-py3-log4-prefix-sum-bitsleetcode3495.html)
+- [Py3 C++算術建構解1317 Convert Integer to the Sum of Two No Zero Integers](https://anwendeng.blogspot.com/2025/09/py3-c1317-convert-integer-to-sum-of-two.html)
 
 
 
