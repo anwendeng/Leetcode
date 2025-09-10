@@ -3,8 +3,7 @@ class Solution:
         m=len(languages)
         know=[set() for _ in range(m)]
         for i, L in enumerate(languages):
-            for l in L: 
-                know[i].add(l)
+            know[i]=set(L)
         
         need=set()
         for a1, b1 in friendships:
