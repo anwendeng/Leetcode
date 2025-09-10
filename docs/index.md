@@ -77,6 +77,7 @@ layout: default
 - [C++C py3 log4 prefix sum, bits解Leetcode難題3495 Minimum Operations to Mak...](https://anwendeng.blogspot.com/2025/09/cc-py3-log4-prefix-sum-bitsleetcode3495.html)
 - [C++示範bitset取代hashset解Leetcode 1733 Minimum Number of People to Teach(含Py3 code)](https://anwendeng.blogspot.com/2025/09/cbitsethashsetleetcode-1733-minimum.html)
 - [Py3 C++算術建構解1317 Convert Integer to the Sum of Two No Zero Integers](https://anwendeng.blogspot.com/2025/09/py3-c1317-convert-integer-to-sum-of-two.html)
+- [C++示範bitset取代hashset解Leetcode 1733 Minimum Number of People to Teach 含Py3 code](https://anwendeng.blogspot.com/2025/09/cbitsethashsetleetcode-1733-minimum.html)
 
 
 
