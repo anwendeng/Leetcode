@@ -75,6 +75,7 @@ layout: default
 - [Py3 C++排序loop解Leetcode 3025 3027 Find the Number of Ways to Place People](https://anwendeng.blogspot.com/2025/09/py3-cloopleetcode-3025-3027-find-number.html)
 - [C++ C Py3 Rust數bits解Leetcode 2749 Minimum Operations to Make the Intege...](https://anwendeng.blogspot.com/2025/09/c-c-py3-rustbitsleetcode-2749-minimum.html)
 - [C++C py3 log4 prefix sum, bits解Leetcode難題3495 Minimum Operations to Mak...](https://anwendeng.blogspot.com/2025/09/cc-py3-log4-prefix-sum-bitsleetcode3495.html)
+- [C++示範bitset取代hashset解Leetcode 1733 Minimum Number of People to Teach(含Py3 code)](https://anwendeng.blogspot.com/2025/09/cbitsethashsetleetcode-1733-minimum.html)
 - [Py3 C++算術建構解1317 Convert Integer to the Sum of Two No Zero Integers](https://anwendeng.blogspot.com/2025/09/py3-c1317-convert-integer-to-sum-of-two.html)
 
 
