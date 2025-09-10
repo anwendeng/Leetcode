@@ -41,3 +41,129 @@ Note that friendships are not transitive, meaning if <code>x</code> is a friend 
 	<li>All tuples <code>(u<sub>​​​​​i, </sub>v<sub>​​​​​​i</sub>)</code> are unique</li>
 	<li><code>languages[i]</code> contains only unique values</li>
 </ul>
+
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Use bitset to replace hashset; the elapsed time will be speeded up very significantly.
+For comparison, a version using unoredered_set is also made which runs in 227ms.
+[This film show how to convert a version using hashset into a version using bitset. Please turn on the English subtitles if necessary]
+[https://youtu.be/TZj1qyV-_m4?si=L6jcc51m88LVLlkF](https://youtu.be/TZj1qyV-_m4?si=L6jcc51m88LVLlkF)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. let `m=|languages|`
+2. declare `vector<bitset<501>> know(m)` as known languages for each person, 1 `bitset<501>` for 1 person
+3. Use a double loop to assign `know[i][l]` for l in `languages[i]` for i
+4. declare `bitset<501> need=0` which denotes who need be taught a language eventually
+5. Use a loop to find out who `need` as follows
+```cpp
+for (auto& f : friendships) {// trasvere over friendships
+    int a=f[0]-1, b=f[1]-1;// 1-indexed for know
+    if ((know[a] & know[b]).any()) continue; // can talk, because the intersection is not empty
+    need[a]=need[b]=1;// a & b need be taught a language eventually
+}
+```
+6. Let `ans=IT_MAX` be given initially
+7. Proceed the loop to find out the min:
+```cpp
+for (int lang=1; lang<=n; lang++) { // languages for 1..n
+    int cnt=0;
+    for (int i=0; i<m; i++) {
+        if (need[i] & !know[i][lang]) cnt++;// teach person[i] language lang
+    }
+    ans=min(ans, cnt);// take min
+}
+```
+8. return `ans`
+9. Add a hashset version
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(mn+|friendship|n)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(501m)$
+# Code|C++ 0ms
+```cpp []
+class Solution {
+public:
+    static int minimumTeachings(int n, vector<vector<int>>& languages, vector<vector<int>>& friendships) {
+        int m=languages.size(); // number of people
+
+        //known languages for each person
+        vector<bitset<501>> know(m);
+        for (int i=0; i<m; i++) 
+            for (int l : languages[i]) know[i][l]=1;
+        
+        // people need be taught
+        bitset<501> need=0;
+        for (auto& f : friendships) {
+            int a=f[0]-1, b=f[1]-1;
+            if ((know[a] & know[b]).any()) continue; // can talk
+            need[a]=need[b]=1;
+        }
+
+        // if no need
+        if (need.count()==0) return 0;
+
+        int ans=INT_MAX;
+        for (int lang=1; lang<=n; lang++) { // languages for 1..n
+            int cnt=0;
+            for (int i=0; i<m; i++) {
+                if (need[i] & !know[i][lang]) cnt++;
+            }
+            ans=min(ans, cnt);
+        }
+
+        return ans;
+    }
+};
+
+```
+# Hashset version|C++ unordered_set 227ms
+```cpp []
+// use unordered_set for comparison
+class Solution {
+public:
+    static bool intersection(unordered_set<int>& X, unordered_set<int>& Y){
+        if (X.size()>Y.size()) return intersection(Y, X);
+        for(int x: X){
+            if (Y.count(x)) return 1;
+        }
+        return 0;
+    }
+    static int minimumTeachings(int n, vector<vector<int>>& languages, vector<vector<int>>& friendships) {
+        int m=languages.size(); // number of people
+
+        // store known languages for each person
+        vector<unordered_set<int>> know(m);
+        for (int i=0; i<m; i++) 
+            for (int l : languages[i]) know[i].insert(l);
+        
+
+        // people need be taught
+        unordered_set<int> need;
+        need.reserve(500);
+        for (auto& f : friendships) {
+            int a=f[0]-1, b=f[1]-1;
+            if (intersection(know[a],know[b])) continue; // can talk
+            need.insert(a);
+            need.insert(b);
+        }
+
+        // if no need
+        if (need.size()==0) return 0;
+
+        int ans=INT_MAX;
+        for (int lang=1; lang<=n; lang++) {   // languages for 1..n
+            int cnt=0;
+            for (int i: need) {
+                if (!know[i].count(lang)) cnt++;
+            }
+            ans=min(ans, cnt);
+        }
+
+        return ans;
+    }
+};
+```
