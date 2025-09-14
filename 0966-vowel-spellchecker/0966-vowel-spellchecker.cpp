@@ -3,7 +3,7 @@ struct TrieNode {
     int id;
 };
 
-static constexpr int N=350000;  
+static constexpr int N=35000;  
 static TrieNode pool[3][N];
 static string Word[3][N];
 static int ptr[3]={0,0,0};   // node counters
@@ -20,6 +20,7 @@ class Trie {
 public:
     TrieNode* root;
     Trie(int idx): idx(idx) {
+        ptr[idx]=wid[idx]=0;
         root=newNode();
     }
     void insert(const string& word, const string& word0) {
@@ -65,6 +66,9 @@ public:
     static vector<string> spellchecker(vector<string>& wordlist, vector<string>& queries) {
         Trie W(0), Wlow(1), WdeV(2);
 
+    //    cout<<ptr[0]<<","<<ptr[1]<<","<<ptr[2]<<endl;
+    //    cout<<wid[0]<<","<<wid[1]<<","<<wid[2]<<endl;
+
         // build dictionaries
         for(const string& w : wordlist) {
             W.insert(w, w);
@@ -91,10 +95,3 @@ public:
     }
 };
 
-auto init = []()
-{ 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    return 'c';
-}();
