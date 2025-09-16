@@ -63,6 +63,9 @@ layout: default
      <div class="video-container">
      <iframe width="560" height="315" src="https://www.youtube.com/embed/hCZzU0D6lRI?si=rVNTlUgzBs6JHti0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
      </div>
+     <div class="video-container">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/my83uM-J94U?si=PLBnlIdmVYZz6QGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -81,6 +84,7 @@ layout: default
 - [Py3 C++算術建構解1317 Convert Integer to the Sum of Two No Zero Integers](https://anwendeng.blogspot.com/2025/09/py3-c1317-convert-integer-to-sum-of-two.html)
 - [C++示範bitset取代hashset解Leetcode 1733 Minimum Number of People to Teach 含Py3 code](https://anwendeng.blogspot.com/2025/09/cbitsethashsetleetcode-1733-minimum.html)
 - [C++ Trie prefix tree解母音拼字Leetcode 966 Vowel Spellchecker](https://anwendeng.blogspot.com/2025/09/c-trie-prefix-treeleetcode-966-vowel.html)
+- [ C++ GCD LCM解Leetcode難題2197 Replace Non Coprime Numbers in Array 含Py3 code](https://anwendeng.blogspot.com/2025/09/c-c-gcd-lcmleetcode2197-replace-non.html)
 
 
 
