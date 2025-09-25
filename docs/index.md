@@ -91,6 +91,7 @@ layout: default
 - [C++示範bitset取代hashset解Leetcode 1733 Minimum Number of People to Teach 含Py3 code](https://anwendeng.blogspot.com/2025/09/cbitsethashsetleetcode-1733-minimum.html)
 - [C++ Trie prefix tree解母音拼字Leetcode 966 Vowel Spellchecker](https://anwendeng.blogspot.com/2025/09/c-trie-prefix-treeleetcode-966-vowel.html)
 - [ C++ GCD LCM解Leetcode難題2197 Replace Non Coprime Numbers in Array 含Py3 code](https://anwendeng.blogspot.com/2025/09/c-c-gcd-lcmleetcode2197-replace-non.html)
+- [Py3 C++ DP動態規劃速解Leetcode 120 Triangle](https://anwendeng.blogspot.com/2025/09/py3-c-dpleetcode-120-triangle.html)
 
 
 
