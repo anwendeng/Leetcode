@@ -53,3 +53,150 @@ The minimum score is 144.</p>
 	<li><code>3 &lt;= n &lt;= 50</code></li>
 	<li><code>1 &lt;= values[i] &lt;= 100</code></li>
 </ul>
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Use Divide & Conquer to solve this question which can be written a top-down design.
+
+The iterative way is also based on the same recurrence implemented.
+[This film explains how to implement Python code in the iterative way, please turn on the English subtitles]
+[https://youtu.be/MDlLpRRMazo?si=lrbXjZd8JvwT2lMT](https://youtu.be/MDlLpRRMazo?si=lrbXjZd8JvwT2lMT)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+1. let the state matrix be given `dp[i][j]`=min weight for convex polygon `v[i..j]`
+2. Let's first consider the recursive function `int f(int i, int j, vector<int>& v)` as follows
+```cpp
+static int f(int i, int j, vector<int>& v){
+    if (dp[i][j]!=-1) 
+        return dp[i][j];// avoid of redudant computation
+    if (j-i<=1) 
+        return dp[i][j]=0; // only 2 sides
+    if (j-i==2) 
+        return dp[i][j]=v[i]*v[i+1]*v[i+2];// triangle
+    // consider the edge v[i], v[j]
+    const int e=v[i]*v[j];
+    int ans=INT_MAX;
+    for(int k=i+1; k<j; k++)
+        ans=min(ans, e*v[k]+f(i, k, v)+f(k, j, v));// recursion
+    return dp[i][j]=ans;
+}
+```
+3. In `minScoreTriangulation(vector<int>& v)` deals with the special case when n=3 to return `v[0]*v[1]*v[2]`
+4. Fill with`dp` with -1
+5. return `f(0, n-1, v)`
+6. The iterative one uses 2 loops
+7. first loop computes the areas of  all triangles formed by 3 consective vertiices `v[i], v[i+1], v[i+2]`
+8. The 2nd loop is a triple loop in the following:
+```
+for (int d=3; d<=n-1; d++){//d-polygons 
+    for(int i=0; i<n-d; i++){
+        const int j=i+d;
+        int w=INT_MAX, e=v[i]*v[j];
+        for(int k=i+1; k<j; k++)
+            w=min(w, e*v[k]+dp[i][k]+dp[k][j]);
+        dp[i][j]=w;
+    } 
+}
+```
+![polygon.png](https://assets.leetcode.com/users/images/5e50846b-c6f1-4153-93d3-ba17350547b0_1759106101.6130614.png)
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(n^3)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(n^2)$
+# Code|iterative DP |0ms
+```cpp []
+// simplied verion using 1-loop
+class Solution {
+public:
+    static int minScoreTriangulation(vector<int>& v) {
+        const int n=v.size();
+        if (n==3) return v[0]*v[1]*v[2];
+
+        // dp[i][j]=min weight for convex v[i..j]
+        vector<vector<int>> dp(n-1, vector<int>(n, 0));
+
+        for (int d=2; d<=n-1; d++){
+            for(int i=0; i<n-d; i++){
+                const int j=i+d;
+                int w=INT_MAX, e=v[i]*v[j];
+                for(int k=i+1; k<j; k++)
+                    w=min(w, e*v[k]+dp[i][k]+dp[k][j]);
+                dp[i][j]=w;
+            } 
+        }
+        return dp[0][n-1];
+    }
+};
+```
+```cpp []
+class Solution {
+public:
+    static int minScoreTriangulation(vector<int>& v) {
+        const int n=v.size();
+        if (n==3) return v[0]*v[1]*v[2];
+
+        // dp[i][j]=min weight for convex v[i..j]
+        vector<vector<int>> dp(n-1, vector<int>(n, 0));
+        for(int i=0; i<n-2; i++)
+            dp[i][i+2]=v[i]*v[i+1]*v[i+2];
+        for (int d=3; d<=n-1; d++){
+            for(int i=0; i<n-d; i++){
+                const int j=i+d;
+                int w=INT_MAX, e=v[i]*v[j];
+                for(int k=i+1; k<j; k++)
+                    w=min(w, e*v[k]+dp[i][k]+dp[k][j]);
+                dp[i][j]=w;
+            } 
+        }
+        return dp[0][n-1];
+    }
+};
+```
+# Code| recursion+memo|0ms
+```
+int dp[50][50];// dp[i][j]=min weight for convex v[i..j]
+class Solution {
+public:
+    static int f(int i, int j, vector<int>& v){
+        if (dp[i][j]!=-1) return dp[i][j];
+        if (j-i<=1) return dp[i][j]=0; // only 2 sides
+        if (j-i==2) return dp[i][j]=v[i]*v[i+1]*v[i+2];
+        // consider the edge v[i], v[j]
+        const int e=v[i]*v[j];
+        int ans=INT_MAX;
+        for(int k=i+1; k<j; k++)
+            ans=min(ans, e*v[k]+f(i, k, v)+f(k, j, v));
+        return dp[i][j]=ans;
+    }
+    static int minScoreTriangulation(vector<int>& v) {
+        const int n=v.size();
+        if (n==3) return v[0]*v[1]*v[2];
+        for(int i=0; i<n; i++)
+            memset(dp[i], -1, 4*n);
+        return f(0, n-1, v);
+    }
+};
+```
+# Python 
+```
+# dp[i][j]=min weight for convex v[i..j]
+class Solution:
+    def minScoreTriangulation(self, v: List[int]) -> int:
+        n=len(v)
+        if n==3: return v[0]*v[1]*v[2]
+        dp=[[0]*n for _ in range(n-1)]
+
+        for d in range(2, n):
+            for i in range(n-d):
+                j=i+d
+                w, e=1<<32, v[i]*v[j]
+                for k in range(i+1, j):
+                    w=min(w, e*v[k]+dp[i][k]+dp[k][j])
+                dp[i][j]=w
+        return dp[0][-1]
+        
+```
