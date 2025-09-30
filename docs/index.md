@@ -75,6 +75,9 @@ layout: default
       <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/MDlLpRRMazo?si=KS_dVcN8yoBD03AJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4nvaOcMLY58?si=tUV_6a7p7m38F6xD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -96,6 +99,7 @@ layout: default
 - [ C++ GCD LCM解Leetcode難題2197 Replace Non Coprime Numbers in Array 含Py3 code](https://anwendeng.blogspot.com/2025/09/c-c-gcd-lcmleetcode2197-replace-non.html)
 - [Py3 C++ DP動態規劃速解Leetcode 120 Triangle](https://anwendeng.blogspot.com/2025/09/py3-c-dpleetcode-120-triangle.html)
 - [Py3 C++ dp動態規劃解Leetcode 1039 Minimum Score Triangulation of Polygon](https://anwendeng.blogspot.com/2025/09/py3-c-dpleetcode-1039-minimum-score.html)
+- [C++ Pascal三角與模10算術解Leetcode 2221 Find Triangular Sum of an Array 含Py3 Code](https://anwendeng.blogspot.com/2025/09/c-pascal10leetcode-2221-find-triangular.html)
 
 
 
