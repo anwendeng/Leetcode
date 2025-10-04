@@ -30,3 +30,82 @@
 	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
 	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Very classical problem, done before.
+[This film shows how to implement by using Python. Please turn on the  English subtitles if necessary]
+[https://youtu.be/1pPC3uarDNA?si=4Bx_dyFPZBVyftgI](https://youtu.be/1pPC3uarDNA?si=4Bx_dyFPZBVyftgI)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+![question_11.jpg](https://assets.leetcode.com/users/images/f2dc13f3-c562-4535-9d46-11bdbf8cf22a_1759539689.56715.jpeg)
+
+1. define the function `int area(int l, int r, vector<int>& height)` which computes `min(height[l], height[r])*(r-l)`, i.e. the water area for `l` & `r` can hold.
+2. `n=|height|`
+3. Starting 2-pointer `l=0 & r=n-1`
+4. Let `A=area(l, r, height)`
+5. Use a while loop do the following
+```cpp
+while (l<r){
+    //update A with max of A & current area
+    A=max(A, area(l, r, height));
+
+    // move either r or l when its height is smaller
+    if(height[r]<height[l]) r--;// moving r
+    else l++;// moving l
+}
+```
+6. return `A`
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(n)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+# Code|0ms
+```C []
+#pragma GCC optimize("O3, unroll-loops")
+static int maxArea(int* height, int n) {
+    int A=0;
+    for(int l=0, r=n-1; l<r; ){
+        A=fmax(A, fmin(height[l], height[r])*(r-l));
+        if (height[r]<height[l]) r--;
+        else l++;
+    }
+    return A;
+}
+```
+```cpp []
+class Solution {
+public:
+    static inline int area(int l, int r, vector<int>& height){
+        return min(height[l], height[r])*(r-l);
+    }
+    static int maxArea(vector<int>& height) {
+        int n=height.size();
+        int l=0, r=n-1;
+        int A=area(l, r, height);
+        while (l<r){
+            A=max(A, area(l, r, height));
+            if(height[r]<height[l]) r--;
+            else l++;
+        }
+        return A;   
+    }
+};
+```
+# Python
+
+```
+class Solution:
+    def maxArea(self, h: List[int]) -> int:
+        n=len(h)
+        A, l, r=0, 0, n-1
+        while l<r:
+            A=max(A, min(h[l], h[r])*(r-l))
+            if h[r]<h[l]: r-=1
+            else: l+=1
+        return A
+        
+```
