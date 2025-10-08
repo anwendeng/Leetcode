@@ -81,6 +81,9 @@ layout: default
       <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/1pPC3uarDNA?si=CRINC3la_0Qncdu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+       <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Lz7Ii4o3Y60?si=7GRoyvOLzwijDG-O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -90,6 +93,7 @@ layout: default
 
 ## LeetCode 題目連結
 
+- [C++ Py3 計數排序與partial sum解Leetcode 2300 Successful Pairs of Spells and Potions](https://anwendeng.blogspot.com/2025/10/c-py3-partial-sumleetcode-2300.html)
 - [3021. Alice and Bob Playing Flower Game: number of x+y=odd beats 100%](https://leetcode.com/problems/alice-and-bob-playing-flower-game/solutions/7132997/number-of-x-y-odd-beats-100/)
 - [3446. Sort Matrix by Diagonals](https://anwendeng.blogspot.com/2025/08/py3-cleetcode-3446-sort-matrix-by.html)
 - [C++ DP速解難題leetcode 3363 Find the Maximum Number of Fruits Collected/Py3 code inclusive](https://anwendeng.blogspot.com/2025/08/c-dpleetcode-3363-find-maximum-number.html)
