@@ -96,7 +96,7 @@ layout: default
 
 ## LeetCode 題目連結
 
--[Py3 C++計數bitmask與2 pointers速解Leetcode2273 Find Resultant Array After](https://anwendeng.blogspot.com/2025/10/py3-cbitmask2-pointersleetcode2273-find.html)
+- [Py3 C++計數bitmask與2 pointers速解Leetcode2273 Find Resultant Array After](https://anwendeng.blogspot.com/2025/10/py3-cbitmask2-pointersleetcode2273-find.html)
 - [C++ Py3 計數排序與partial sum解Leetcode 2300 Successful Pairs of Spells and Potions](https://anwendeng.blogspot.com/2025/10/c-py3-partial-sumleetcode-2300.html)
 - [3021. Alice and Bob Playing Flower Game: number of x+y=odd beats 100%](https://leetcode.com/problems/alice-and-bob-playing-flower-game/solutions/7132997/number-of-x-y-odd-beats-100/)
 - [3446. Sort Matrix by Diagonals](https://anwendeng.blogspot.com/2025/08/py3-cleetcode-3446-sort-matrix-by.html)
