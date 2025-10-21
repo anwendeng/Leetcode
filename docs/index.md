@@ -87,6 +87,9 @@ layout: default
        <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/eQO89LrR8Bg?si=l-kkOxzaW4EV8HJ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/RkCpBAkOUIc?si=x_VS2eh9vCb54yT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -96,6 +99,7 @@ layout: default
 
 ## LeetCode 題目連結
 
+- [py3 C++ Line sweep解Leetcode 3346 Maximum Frequency of an Element After ...](https://anwendeng.blogspot.com/2025/10/py3-c-line-sweepleetcode-3346-maximum.html)
 - [Py3 C++計數bitmask與2 pointers速解Leetcode2273 Find Resultant Array After](https://anwendeng.blogspot.com/2025/10/py3-cbitmask2-pointersleetcode2273-find.html)
 - [C++ Py3 計數排序與partial sum解Leetcode 2300 Successful Pairs of Spells and Potions](https://anwendeng.blogspot.com/2025/10/c-py3-partial-sumleetcode-2300.html)
 - [3021. Alice and Bob Playing Flower Game: number of x+y=odd beats 100%](https://leetcode.com/problems/alice-and-bob-playing-flower-game/solutions/7132997/number-of-x-y-odd-beats-100/)
