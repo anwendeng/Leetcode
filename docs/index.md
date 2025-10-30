@@ -105,6 +105,7 @@ layout: default
 
 ## LeetCode 題目連結
 
+- [C++ py3 C Rust速解Leetcode 1526 Minimum Number of Increments on Subarrays ...](https://anwendeng.blogspot.com/2025/10/c-py3-c-rustleetcode-1526-minimum.html)
 - [py3 C++ Line sweep解Leetcode 3346 Maximum Frequency of an Element After ...](https://anwendeng.blogspot.com/2025/10/py3-c-line-sweepleetcode-3346-maximum.html)
 - [Py3 C++計數bitmask與2 pointers速解Leetcode2273 Find Resultant Array After](https://anwendeng.blogspot.com/2025/10/py3-cbitmask2-pointersleetcode2273-find.html)
 - [C++ Py3 計數排序與partial sum解Leetcode 2300 Successful Pairs of Spells and Potions](https://anwendeng.blogspot.com/2025/10/c-py3-partial-sumleetcode-2300.html)
