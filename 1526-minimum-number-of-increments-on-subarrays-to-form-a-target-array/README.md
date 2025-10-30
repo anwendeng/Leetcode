@@ -42,3 +42,101 @@
 	<li><code>1 &lt;= target.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>1 &lt;= target[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
+
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+The question can be easily solved by the following formula:
+$$
+ans=t[0]+\sum_{i>0}\max(t[i]-t[i-1], 0)
+$$
+[Explain how to write the codes; please turn on the English subtitles  if necessary]
+[https://youtu.be/kdrpAkBczq0?si=i8-WpH8qipIcl9mC](https://youtu.be/kdrpAkBczq0?si=i8-WpH8qipIcl9mC)
+# Approach
+<!-- Describe your approach to solving the problem. -->
+Several solutions.
+1. the 1st one uses `adjacent_difference` to convert `target=[t[i] for i]` to the array `[t[0], t[1]-t[0], ...., t[i]-t[i-1],...,t[n-1]-t[n-2]]`
+2. Then apply `accumulate` to the array with the lamba `[](int sum, int x){ return sum+=max(0,x);}`
+3. 2nd solution is the easy loop version which is a 1-pass solution.
+4. The 2nd C++ is the direct implementation of the formula given above
+5. Add a Python 1-liner
+6. Add a C code
+7. Add a Java code
+8. Add a Rust code
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+$O(n)$
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+$O(1)$
+# Code adjacent_difference+accumulate|0ms
+```cpp []
+class Solution {
+public:
+    static int minNumberOperations(vector<int>& target) {
+        adjacent_difference(target.begin(), target.end(), target.begin());
+        return accumulate(target.begin(), target.end(), 0,
+        [](int sum, int x){ return sum+=max(0,x);});
+    }
+};
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
+```
+# 1 pass|C/C++0ms|Java 3ms|Rust 0ms
+```Rust []
+impl Solution {
+    pub fn min_number_operations(target: Vec<i32>) -> i32 {
+        let n=target.len();
+        let mut ans=target[0];
+        for i in 1..n{
+            ans+=(target[i]-target[i-1]).max(0);
+        }
+        ans
+    }
+}
+```
+```C []
+#pragma GCC optimize("O3, unroll-loops")
+int minNumberOperations(int* target, int n) {
+    int ans=target[0];
+    for(int i=1; i<n; i++){
+        ans+=fmax(target[i]-target[i-1], 0);
+    }
+    return ans;
+}
+```
+```cpp []
+class Solution {
+public:
+    int minNumberOperations(vector<int>& target) {
+        int n=target.size(), ans=target[0];
+        for(int i=1; i<n; i++){
+            ans+=max(target[i]-target[i-1], 0);
+        }
+        return ans;
+    }
+};
+
+```
+```Java []
+class Solution {
+    public int minNumberOperations(int[] target) {
+        final int n=target.length;
+        int ans=target[0];
+        for(int i=1; i<n; i++)
+            ans+=Math.max(target[i]-target[i-1], 0);
+        return ans;
+    }
+}
+```
+# Python 1-liner
+```Python []
+class Solution:
+    def minNumberOperations(self, t: List[int]) -> int:
+        return t[0]+sum(max(x-y, 0) for x, y in zip(t[1:], t))
+```
