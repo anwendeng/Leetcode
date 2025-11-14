@@ -96,6 +96,9 @@ layout: default
       <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/kdrpAkBczq0?si=b1mqOZdqOfDyLZhm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bZu4AQBryP4?si=eDC138_a41aDrXlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -105,6 +108,7 @@ layout: default
 
 ## LeetCode 題目連結
 
+- [Py3 C++ 2D sweep解Leetcode 2536 Increment Submatrices by One](https://anwendeng.blogspot.com/2025/11/py3-c-2d-sweepleetcode-2536-increment.html)
 - [C++ py3 C Rust速解Leetcode 1526 Minimum Number of Increments on Subarrays ...](https://anwendeng.blogspot.com/2025/10/c-py3-c-rustleetcode-1526-minimum.html)
 - [py3 C++ Line sweep解Leetcode 3346 Maximum Frequency of an Element After ...](https://anwendeng.blogspot.com/2025/10/py3-c-line-sweepleetcode-3346-maximum.html)
 - [Py3 C++計數bitmask與2 pointers速解Leetcode2273 Find Resultant Array After](https://anwendeng.blogspot.com/2025/10/py3-cbitmask2-pointersleetcode2273-find.html)
