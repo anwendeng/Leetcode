@@ -105,6 +105,9 @@ layout: default
       <div class="video-container">
      <iframe width="560" height="315" src="https://www.youtube.com/embed/82oTklO9n8U?si=dH_a_DogtlU65owe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+       <div class="video-container">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/WEeEKLEbdoQ?si=vpZPn40YT4Ua4i7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 </div>
 
 ## 訂閱我的 YouTube 頻道
@@ -114,6 +117,7 @@ layout: default
 
 ## LeetCode 題目連結
 
+- [Py3 C++ hashmap多項次公式解梯形問題Leetcode 3623 Count Number of Trapezoids I](https://anwendeng.blogspot.com/2025/12/py3-c-hashmapleetcode-3623-count-number.html)
 - [Py3 C C++ prefix sum解Leetcode 3381 Maximum Subarray Sum With Length Div...](https://anwendeng.blogspot.com/2025/11/py3-c-c-prefix-sumleetcode-3381-maximum.html)
 - [Py3 C++找出pattern迭代變化解出Leetcode 1015 Smallest Integer Divisible by K](https://anwendeng.blogspot.com/2025/11/py3-cpatternleetcode-1015-smallest.html)
 - [Py3 C++ 2D sweep解Leetcode 2536 Increment Submatrices by One](https://anwendeng.blogspot.com/2025/11/py3-c-2d-sweepleetcode-2536-increment.html)
